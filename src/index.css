@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+a{
+    text-decoration: none;
+}
+
+.active {
+    color: rgba(255, 161, 53, 1);
+}
+
+html {
+    font-family: 'Outfit', 'Inter', 'Jost', sans-serif;
+    background-color: #000; 
+    color:#fff;
+
+}
+
+*{
+    padding: 0%;
+    margin: 0px;
+    box-sizing: border-box;
+}
+input:focus{
+    border: 2px solid rgb(249, 252, 255) !important;
+    outline: none;
+}

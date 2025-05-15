@@ -1,0 +1,101 @@
+import React from 'react';
+import assets from '../assets/asset';
+import { GrLocation } from 'react-icons/gr';
+import { HiOutlineMail } from 'react-icons/hi';
+import { HiPhone } from 'react-icons/hi2';
+
+const Footer = () => {
+  return (
+    <footer className="bg-black text-white font-sans">
+      <div className=" px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* Logo & Contact Info */}
+        <div className="flex flex-col gap-6">
+          <img src={assets.yugant} alt='Yugant Logo' className='w-24 h-24 object-contain' />
+          
+          <div className='flex space-x-4'>
+            <img src={assets.icon1} alt='Instagram' className='w-6 h-6' />
+            <img src={assets.icon2} alt='YouTube' className='w-6 h-6' />
+            <img src={assets.icon3} alt='LinkedIn' className='w-6 h-6' />
+            <img src={assets.icon} alt='X Logo' className='w-6 h-6' />
+          </div>
+
+          <div>
+            <p className='font-bold text-lg mb-3'>GET IN TOUCH</p>
+            <div className='flex items-start gap-3 mb-2'>
+              <GrLocation className='mt-1' />
+              <div>
+                <p className='font-semibold'>Location</p>
+                <p className='text-gray-400 text-sm'>Kolkata</p>
+              </div>
+            </div>
+            <div className='flex items-start gap-3 mb-2'>
+              <HiOutlineMail className='mt-1' />
+              <div>
+                <p className='font-semibold'>Email</p>
+                <p className='text-gray-400 text-sm'>info@yugant.com</p>
+              </div>
+            </div>
+            <div className='flex items-start gap-3'>
+              <HiPhone className='mt-1' />
+              <div>
+                <p className='font-semibold'>Phone</p>
+                <p className='text-gray-400 text-sm'>+91 9876543210</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Use Cases */}
+        <div>
+          <p className='font-bold text-lg mb-4'>Use Cases</p>
+          <ul className='space-y-2 text-sm text-gray-300'>
+            <li className='cursor-pointer hover:text-white'>UI Design</li>
+            <li className='cursor-pointer hover:text-white'>UX Design</li>
+            <li className='cursor-pointer hover:text-white'>Wireframing</li>
+            <li className='cursor-pointer hover:text-white'>Diagramming</li>
+            <li className='cursor-pointer hover:text-white'>Brainstorming</li>
+            <li className='cursor-pointer hover:text-white'>Online Whiteboard</li>
+            <li className='cursor-pointer hover:text-white'>Team Collaboration</li>
+          </ul>
+        </div>
+
+        {/* Explore */}
+        <div>
+          <p className='font-bold text-lg mb-4'>Explore</p>
+          <ul className='space-y-2 text-sm text-gray-300'>
+            <li className='cursor-pointer hover:text-white'>Design</li>
+            <li className='cursor-pointer hover:text-white'>Prototyping</li>
+            <li className='cursor-pointer hover:text-white'>Development Features</li>
+            <li className='cursor-pointer hover:text-white'>Design Systems</li>
+            <li className='cursor-pointer hover:text-white'>Collaboration Features</li>
+            <li className='cursor-pointer hover:text-white'>Design Process</li>
+            <li className='cursor-pointer hover:text-white'>Figma</li>
+          </ul>
+        </div>
+
+        {/* Resources */}
+        <div>
+          <p className='font-bold text-lg mb-4'>Resources</p>
+          <ul className='space-y-2 text-sm text-gray-300'>
+            <li className='cursor-pointer hover:text-white'>Blog</li>
+            <li className='cursor-pointer hover:text-white'>Best Practices</li>
+            <li className='cursor-pointer hover:text-white'>Colors</li>
+            <li className='cursor-pointer hover:text-white'>Color Wheel</li>
+            <li className='cursor-pointer hover:text-white'>Support</li>
+            <li className='cursor-pointer hover:text-white'>Developers</li>
+            <li className='cursor-pointer hover:text-white'>Resource Library</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className='text-center text-sm text-gray-400 bg-[#5a5a5a] py-4 border-t border-gray-700'>
+        &copy; 2025 Yugant. All rights reserved.
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+
