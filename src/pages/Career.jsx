@@ -1,10 +1,12 @@
-import React from 'react';
+import assets from "../assets/asset";
 
 const Career = () => {
   return (
-  <div className=" w-[90%]  md:max-w-md lg:max-w-lg mx-auto px-6 py-12  my-20 font-semibold rounded-xl border border-gray-700    ">
+  <div className=" w-[90%]  md:max-w-md lg:max-w-lg mx-auto px-6 py-12  my-20 font-semibold rounded-xl border border-gray-700  ">
+  
 
-      <form className="space-y-6  ">
+     <div>
+       <form className="space-y-6  ">
         <h2 className="text-center text-xl font-bold">Job opening in Yugant. Apply Now!</h2>
 
         <div>
@@ -25,7 +27,7 @@ const Career = () => {
             id="contact"
             name="contact"
             placeholder="Enter your number"
-            className="w-full px-4 py-2 bg-black border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-[#FFA135]"
+            className="w-full px-4 py-2 bg-black border border-gray-600 rounded focus:outline-none focus:ring-2 "
           />
         </div>
 
@@ -36,7 +38,7 @@ const Career = () => {
             id="email"
             name="email"
             placeholder="Enter your email"
-            className="w-full px-4 py-2 bg-black border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-[#FFA135]"
+            className="w-full px-4 py-2 bg-black border border-gray-600 rounded focus:outline-none focus:ring-2 "
           />
         </div>
 
@@ -45,7 +47,7 @@ const Career = () => {
           <select
             id="post"
             name="post"
-            className="w-full px-4 py-2  bg-black border border-gray-600 rounded text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFA135]"
+            className="w-full px-4 py-2  bg-black border border-gray-600 rounded text-gray-400 focus:outline-none focus:ring-2"
             defaultValue=""
           >
             <option value="" disabled>Select your interest</option>
@@ -60,7 +62,7 @@ const Career = () => {
             type="number"
             name="experience"
             placeholder="Experience"
-            className="w-full px-4 py-2 bg-black border border-gray-600 rounded mt-2 focus:outline-none focus:ring-2 focus:ring-[#FFA135]"
+            className="w-full px-4 py-2 bg-black border border-gray-600 rounded mt-2 focus:outline-none focus:ring-2 "
           />
         </div>
 
@@ -70,29 +72,33 @@ const Career = () => {
             id="otherDetails"
             name="otherDetails"
             rows="4"
-            className="w-full px-4 py-2 bg-black border border-gray-600 rounded resize-none focus:outline-none focus:ring-2 focus:ring-[#FFA135]"
+            className="w-full px-4 py-2 bg-black border border-gray-600 rounded resize-none focus:outline-none focus:ring-2 "
           ></textarea>
         </div>
 
         <div>
-          <label htmlFor="resume" className="block mb-1">Upload Your Resume</label>
+          <label htmlFor="resume" className="block mb-3">Upload Your Resume</label>
           <input
             type="file"
             id="resume"
             name="resume"
-            className="text-white file:border-0 file:px-4 file:py-2 file:rounded file:text-black"
+            className="text-white file:border-0  file:rounded file:text-black"
           />
         </div>
 
         <button
           type="submit"
-          className="bg-white text-black font-bold py-2 px-6 rounded hover:bg-[#FFA135] transition-all"
+          className="bg-white text-black font-bold py-2 px-6 rounded hover:bg-slate-100 transition-all"
         >
           Apply
         </button>
       </form>
+     </div>
+
+
     </div>
   );
 };
 
 export default Career;
+

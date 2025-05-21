@@ -2,7 +2,6 @@ import board from './board.png';
 import deliever1 from './deliever1.png';
 import deliever2 from './deliever2.png';
 import deliever3 from './deliever3.png';
-import girlSketch from './girlSketch.png';
 import group111 from './Group 111.png';
 import group1 from './Group-1.png';
 import group from './Group.png';
@@ -15,7 +14,7 @@ import location from './location.png';
 import logo from './logo.png';
 import rectangle56 from './Rectangle 56.png';
 import shape from './Shape.png';
-import team from './team.png';
+import team from './team.jpg';
 import van from './van.png';
 import vanDelievery from './vanDelievery.png';
 import yugant from './yugant.png';
@@ -28,6 +27,7 @@ import vector6 from './Vector-6.png';
 import vector7 from './Vector-7.png';
 import vector8 from './Vector-8.png';
 import vector from './Vector.png';
+import girlSketch from './girlSketch.jpg'
 
 const assets = {
   board,

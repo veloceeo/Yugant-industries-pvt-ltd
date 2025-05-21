@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
 import assets from "../assets/asset";
+import React, { useState, useRef, useEffect } from "react";
 import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/io";
 
-const OurTeam = () => {
+const Team = () => {
   const team = [
     { id: 1, name: "Alice Johnson", role: "Frontend Developer", image: assets.shape },
     { id: 2, name: "Bob Smith", role: "Backend Developer", image: assets.shape },
@@ -98,6 +98,5 @@ const OurTeam = () => {
   );
 };
 
-export default OurTeam;
-
+export default Team;
 

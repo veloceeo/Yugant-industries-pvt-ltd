@@ -27,3 +27,31 @@ input:focus{
     border: 2px solid rgb(249, 252, 255) !important;
     outline: none;
 }
+li:hover{
+    text-decoration: underline;
+}
+/* Hide scrollbar for all browsers */
+.hide-scroll ::-webkit-scrollbar {
+  display: none;
+}
+.hide-scroll  {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+.team-member {
+  width: 280px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  visibility: hidden;
+}
+
+.team-member.card-active {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+

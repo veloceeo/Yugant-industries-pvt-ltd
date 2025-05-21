@@ -6,9 +6,9 @@ const Contact = () => {
     <div className="mx-auto py-16 px-4 max-w-7xl">
       <h2 className="text-white text-3xl font-bold text-center mb-12">Contact With Us</h2>
 
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+      <div className="flex flex-col md:flex-row items-center justify-around md:gap-5 lg:gap-0  ">
         {/* Image Section */}
-        <div className="w-full md:w-1/2 rounded-md overflow-hidden shadow-lg">
+        <div className="w-full md:w-1/2 rounded-md overflow-hidden shadow-lg hidden md:block ">
           <img
             src={assets.girlSketch}
             alt="Meeting"
@@ -35,7 +35,7 @@ const Contact = () => {
               id="phone"
               name="phone"
               placeholder="Enter your phone"
-              className="w-full px-4 py-3 bg-[#5a5a5a] border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFA135]"
+              className="w-full px-4 py-3 bg-[#5a5a5a] border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 "
             />
           </div>
           <div>
@@ -45,7 +45,7 @@ const Contact = () => {
               id="email"
               name="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-3 bg-[#5a5a5a]  border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFA135]"
+              className="w-full px-4 py-3 bg-[#5a5a5a]  border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2"
             />
           </div>
           <div>
@@ -55,7 +55,7 @@ const Contact = () => {
               name="message"
               rows="5"
               placeholder="Type a message..."
-              className="w-full px-4 py-3 bg-[#5a5a5a]  border border-gray-600 rounded-md text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-[#FFA135]"
+              className="w-full px-4 py-3 bg-[#5a5a5a]  border border-gray-600 rounded-md text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 "
             ></textarea>
           </div>
           <button

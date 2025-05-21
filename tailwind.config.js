@@ -1,12 +1,18 @@
 
 /** @type {import('tailwindcss').Config} */
-export default {
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // adjust this path to your source files
   ],
   theme: {
-    extend: {},
+    extend: {
+      // You can add custom colors, spacing, fonts, etc. here
+    },
   },
-  plugins: [],
-}
+  plugins: [
+    // No extra plugins here
+  ],
+};
+

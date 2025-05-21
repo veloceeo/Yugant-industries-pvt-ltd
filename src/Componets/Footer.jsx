@@ -7,10 +7,13 @@ import { HiPhone } from 'react-icons/hi2';
 const Footer = () => {
   return (
     <footer className="bg-black text-white font-sans">
-      <div className=" px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+        
+      
+      <div className=" px-6 py-6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center ">
         {/* Logo & Contact Info */}
-        <div className="flex flex-col gap-6">
-          <img src={assets.yugant} alt='Yugant Logo' className='w-24 h-24 object-contain' />
+        <div className="flex flex-col gap-4 text-sm md:text-lg ">
+           <img src={assets.yugant} alt='Yugant Logo' className='w-24 h-24 md:w-32 md:h-32  object-contain' />
           
           <div className='flex space-x-4'>
             <img src={assets.icon1} alt='Instagram' className='w-6 h-6' />
@@ -25,7 +28,10 @@ const Footer = () => {
               <GrLocation className='mt-1' />
               <div>
                 <p className='font-semibold'>Location</p>
-                <p className='text-gray-400 text-sm'>Kolkata</p>
+                <p className='text-gray-400 text-sm'>83 S. P. Mukherjee Road,
+                  <br />
+                  4th Floor Devi Market,
+                  <br /> Kolkata-700026</p>
               </div>
             </div>
             <div className='flex items-start gap-3 mb-2'>
@@ -46,9 +52,9 @@ const Footer = () => {
         </div>
 
         {/* Use Cases */}
-        <div>
+        <div className='flex flex-col items-center justify-center text-center mt-8 md:mt-0 ' >
           <p className='font-bold text-lg mb-4'>Use Cases</p>
-          <ul className='space-y-2 text-sm text-gray-300'>
+          <ul className=' space-y-3 md:space-y-4 text-sm md:text-lg text-gray-300'>
             <li className='cursor-pointer hover:text-white'>UI Design</li>
             <li className='cursor-pointer hover:text-white'>UX Design</li>
             <li className='cursor-pointer hover:text-white'>Wireframing</li>
@@ -60,9 +66,9 @@ const Footer = () => {
         </div>
 
         {/* Explore */}
-        <div>
+           <div className='flex flex-col items-center justify-center text-center ' >
           <p className='font-bold text-lg mb-4'>Explore</p>
-          <ul className='space-y-2 text-sm text-gray-300'>
+          <ul className='space-y-3 md:space-y-4 text-sm text-gray-300  md:text-lg  '>
             <li className='cursor-pointer hover:text-white'>Design</li>
             <li className='cursor-pointer hover:text-white'>Prototyping</li>
             <li className='cursor-pointer hover:text-white'>Development Features</li>
@@ -74,9 +80,9 @@ const Footer = () => {
         </div>
 
         {/* Resources */}
-        <div>
-          <p className='font-bold text-lg mb-4'>Resources</p>
-          <ul className='space-y-2 text-sm text-gray-300'>
+          <div className='flex flex-col items-center justify-center text-center' >
+          <p className='font-bold text-lg mb-4   '>Resources</p>
+          <ul className='space-y-3 md:space-y-4  text-sm text-gray-300 md:text-lg '>
             <li className='cursor-pointer hover:text-white'>Blog</li>
             <li className='cursor-pointer hover:text-white'>Best Practices</li>
             <li className='cursor-pointer hover:text-white'>Colors</li>
