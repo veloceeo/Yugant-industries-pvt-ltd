@@ -74,7 +74,7 @@ const Services = () => {
     setServiceIndex((prev) => (prev - cardsToShow + services.length) % services.length);
   };
 
-  // Get visible cards
+
   const visibleServices = [];
   for (let i = 0; i < cardsToShow; i++) {
     visibleServices.push(services[(serviceIndex + i) % services.length]);

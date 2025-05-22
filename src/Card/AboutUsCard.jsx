@@ -13,13 +13,13 @@ const AboutUsCard = () => {
                 <span className="text-4xl sm:text-5xl  ">Us</span>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-8 mb-10  ">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-20  mb-10  ">
                 {/* Image */}
-                <div className="w-full md:w-1/2 flex md:justify-end justify-center  ">
+                <div className="w-full md:w-1/2 flex md:justify-end justify-center   ">
                     <img
                         src={assets.board}
                         alt="About Us"
-                        className="rounded-lg shadow-lg object-cover w-full max-w-[300px] sm:max-w-lg md:max-w-xl lg:max-w-2xl h-56 sm:h-72 md:h-96 lg:h-[480px]"
+                        className="rounded-lg shadow-lg object-cover w-full max-w-[300px] sm:max-w-lg md:max-w-xl lg:max-w-3xl h-56 sm:h-72 md:h-96 lg:h-[480px]"
                     />
                 </div>
 

@@ -30,49 +30,55 @@ const sections = [
 
 const About = () => {
   return (
-    <div className="mt-20 flex flex-col justify-center mb-20  ">
+    <div className="mt-20 mb-20 flex flex-col justify-between items-center  ">
       {sections.map((section, index) => (
         <div
           key={index}
-          className="flex flex-col md:flex-row justify-between items-center mx-auto gap-10 mb-10 px-6 md:px-10"
+          className="flex flex-col md:flex-row justify-between items-center  md:justify-start  gap-y-10 md:gap-x-10 mb-16 px-4 md:px-6 w-full max-w-screen-3xl"
         >
-          {/* Alternate layout: image left/right based on index */}
           {(index % 2 === 0 || section.title === null) ? (
             <>
-              <div>
+              {/* Image on left */}
+              <div className="w-full md:w-1/2 flex justify-center md:justify-end  ">
                 <img
                   src={section.image}
-                  alt="AboutUs"
-               
-                   className="rounded-lg shadow-lg object-cover  h-48 md: lg:h-80 w-[300px] md:w-[600px]  "
+                  alt={`Section ${index + 1}`}
+                  className="rounded-lg shadow-lg object-cover w-full max-w-lg md:max-w-2xl lg:max-w-5xl h-60 sm:h-80 md:h-[400px] lg:h-[500px]"
                 />
               </div>
-              <div className="max-w-xl text-gray-300 text-base md:text-lg px-2">
+
+              {/* Text on right */}
+              <div className="w-full md:w-1/2 px-2 text-center md:text-left flex flex-col justify-center items-center md:items-start text-gray-300">
                 {section.title && (
-                  <h2 className="text-2xl font-semibold text-white mb-3">
+                  <h2 className="text-3xl  md:text-4xl lg:text-5xl font-semibold text-white mb-4">
                     {section.title}
                   </h2>
                 )}
-                <p className="text-[#5a5a5a]">
+                <p className="text-[#5a5a5a] text-lg sm:text-xl md:text-2xl leading-relaxed max-w-[90%]">
                   {section.text}
                 </p>
               </div>
             </>
           ) : (
             <>
-              <div className="max-w-xl text-gray-300 text-base md:text-lg px-2">
-                <h2 className="text-2xl font-semibold text-white mb-3">
+              {/* Text on left */}
+              <div className="w-full md:w-1/2  text-center md:text-left  flex flex-col justify-center items-center md:items-end text-gray-300">
+              
+                  <h2 className="text-3xl  md:text-4xl  lg:text-5xl font-semibold  text-white mb-4 md:w-[90%] md:text-left  ">
                   {section.title}
                 </h2>
-                <p className="text-[#5a5a5a]">
+             
+                <p className="text-[#5a5a5a] text-lg sm:text-xl md:text-2xl  max-w-[90%]  text-loose  ">
                   {section.text}
                 </p>
               </div>
-              <div>
+
+              {/* Image on right */}
+              <div className="w-full md:w-1/2 flex justify-center md:justify-start">
                 <img
                   src={section.image}
-                  alt="AboutUs"
-                 className="rounded-lg shadow-lg object-cover  h-48 md: lg:h-80 w-[300px] md:w-[600px]  "
+                  alt={`Section ${index + 1}`}
+                  className="rounded-lg shadow-lg object-cover w-full max-w-lg md:max-w-2xl lg:max-w-5xl h-60 sm:h-80 md:h-[400px] lg:h-[500px]"
                 />
               </div>
             </>
