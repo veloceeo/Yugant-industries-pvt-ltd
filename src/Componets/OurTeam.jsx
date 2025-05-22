@@ -31,7 +31,7 @@ const OurTeam = () => {
   }, [teamIndex]);
 
   return (
-    <div className="bg-[#5a5a5a] bg-opacity-20 rounded-lg py-20 overflow-hidden">
+    <div className="bg-[#5a5a5a] bg-opacity-20 rounded-lg py-10 overflow-hidden">
       {/* Title */}
           <div className="flex items-center justify-end mb-10 ">
         <span className="text-white   text-4xl sm:text-5xl ">

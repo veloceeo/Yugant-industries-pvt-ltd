@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const OurBrand = () => {
   return (
     <div className="bg-[#5a5a5a] py-10  ">
-      <div className="flex items-center  mb-10">
+      <div className="flex items-center  ">
         <span className=" text-white   text-4xl sm:text-5xl  shadow-lg w-[190px] h-[100px]  flex  items-center justify-end  " style={{ backgroundImage: `url(${assets.rectangle56})` }} >
           Our Br
         </span>
@@ -15,7 +15,7 @@ const OurBrand = () => {
 
 
 
-      <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-10 md:py-20 w-full max-w-7xl mx-auto gap-5 ">
+      <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-10 md:py-15 w-full max-w-7xl mx-auto gap-5 ">
        
         <div className="flex flex-col gap-6 w-full md:w-1/2 items-center md:items-start">
           <img

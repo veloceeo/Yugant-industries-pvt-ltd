@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AboutUsCard = () => {
     return (
-        <div className='mt-10  py-10 ' >
+        <div className='  py-10 ' >
 
             <div className="flex items-center  mb-10">
                 <span className=" text-white   text-4xl sm:text-5xl  shadow-lg w-[190px] h-[100px]  flex  items-center justify-end  " style={{ backgroundImage: `url(${assets.rectangle56})` }} >
