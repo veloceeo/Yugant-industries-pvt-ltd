@@ -19,7 +19,7 @@ const NewsLetter = () => {
         <input 
           type="text" 
           name='text' 
-          className='px-7 py-2 border border-black  rounded-md  ' 
+          className='px-7 py-2 border border-black  rounded-md w-[30vw] placeholder:text-sm ' 
           placeholder='you@example.com' 
         />
     <div>

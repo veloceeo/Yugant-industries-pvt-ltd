@@ -39,7 +39,7 @@ const About = () => {
           {(index % 2 === 0 || section.title === null) ? (
             <>
               {/* Image on left */}
-              <div className="w-full md:w-1/2 flex justify-center md:justify-end  ">
+              <div className="w-full md:w-1/2 flex justify-center   ">
                 <img
                   src={section.image}
                   alt={`Section ${index + 1}`}
@@ -48,13 +48,13 @@ const About = () => {
               </div>
 
               {/* Text on right */}
-              <div className="w-full md:w-1/2 px-2 text-center md:text-left flex flex-col justify-center items-center md:items-start text-gray-300">
+              <div className="w-full md:w-1/2 px-2 text-center md:text-left  flex flex-col justify-center items-center  text-gray-300">
                 {section.title && (
-                  <h2 className="text-3xl  md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+                  <h2 className="text-3xl  md:text-4xl lg:text-5xl font-semibold text-white mb-4 text-left self-start  ">
                     {section.title}
                   </h2>
                 )}
-                <p className="text-[#5a5a5a] text-lg sm:text-xl md:text-2xl leading-relaxed max-w-[90%]">
+                <p className="text-[#5a5a5a] text-lg sm:text-xl md:text-2xl leading-relaxed max-w-[100%]">
                   {section.text}
                 </p>
               </div>
@@ -62,19 +62,19 @@ const About = () => {
           ) : (
             <>
               {/* Text on left */}
-              <div className="w-full md:w-1/2  text-center md:text-left  flex flex-col justify-center items-center md:items-end text-gray-300">
+              <div className="w-full md:w-1/2  text-center md:text-left  flex flex-col justify-center items-center text-gray-300">
               
-                  <h2 className="text-3xl  md:text-4xl  lg:text-5xl font-semibold  text-white mb-4 md:w-[90%] md:text-left  ">
+                  <h2 className="text-3xl  md:text-4xl  lg:text-5xl font-semibold  text-white mb-4  text-left self-start  ">
                   {section.title}
                 </h2>
              
-                <p className="text-[#5a5a5a] text-lg sm:text-xl md:text-2xl  max-w-[90%]  text-loose  ">
+                <p className="text-[#5a5a5a] text-lg sm:text-xl md:text-2xl  max-w-[100%]  text-loose  ">
                   {section.text}
                 </p>
               </div>
 
               {/* Image on right */}
-              <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+              <div className="w-full md:w-1/2 flex justify-center ">
                 <img
                   src={section.image}
                   alt={`Section ${index + 1}`}

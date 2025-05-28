@@ -34,13 +34,13 @@ const OurBrand = () => {
           <img
             src={assets.board}
             alt="Discussion"
-            className="w-[220px] sm:w-[260px] md:w-[340px] lg:w-[480px] object-cover rounded shadow-lg z-10"
+            className="w-[220px] sm:w-[260px] md:w-[340px] lg:w-[480px] object-cover  shadow-lg z-10"
           />
          
           <img
             src={assets.girlSketch}
             alt="Team Working"
-            className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-6 md:right-6 lg:right-2 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[380px] object-cover rounded-lg shadow-md z-20 border-4 border-white"
+            className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-6 md:right-6 lg:right-2 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[380px] object-cover  shadow-md z-20 border-4 border-white"
           />
         </div>
       </div>

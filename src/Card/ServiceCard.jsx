@@ -58,11 +58,11 @@ const ServiceCard = () => {
 
       {/* Cards Grid */}
       <div className=" w-full max-w-7xl mx-auto px-4 hidden  md:block ">
-        <div className=" grid  md:grid-cols-2  lg:grid-cols-3 gap-10 justify-items-center ">
+        <div className=" grid  md:grid-cols-3  lg:grid-cols-3 gap-5 justify-items-center ">
           {services.map((service, index) => (
             <div
               key={index}
-              className=" rounded-xl shadow-md px-6 py-6 w-[370px] h-[450px]  flex  bg-[#2a2a2a] border border-[#fafafa] "
+              className=" rounded-xl shadow-md px-6 py-6 w-[30vvw] min-h-[400px] max-h-auto  flex  bg-[#2a2a2a] border border-[#fafafa] max-w-full "
             >
               <div className="text-center space-y-4 flex flex-col  ">
                 <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-amber-600/30">
@@ -88,12 +88,12 @@ const ServiceCard = () => {
   </button>
 
   {/* Scroll container */}
-  <div className="overflow-x-auto scroll-smooth hide-scroll max-w-[450px] flex mx-auto h-[300px] ">
+  <div className="overflow-x-auto scroll-smooth hide-scroll max-w-[60vw] sm:max-w-[40vw] flex mx-auto min-h-[300px] max-h-auto ">
     {services.map((service, index) => (
       <div
         key={index}
         ref={(el) => (serviceRefs.current[index] = el)}
-        className={`w-full flex-shrink-0 text-center transition-transform duration-500 ${
+        className={`w-[100%] flex-shrink-0 text-center transition-transform duration-500 ${
           index === serviceIndex ? "scale-100" : "scale-95 opacity-60"
         } bg-white/5 p-4 rounded-lg `}
       >
