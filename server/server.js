@@ -1,0 +1,96 @@
+import { config } from "dotenv";
+import express from 'express';
+import Contact from './models/Contact.js';
+import cors from 'cors';
+import connectToDb from "./db/db.js";
+import upload from "./middleware/upload.js";
+import Subscribe from "./models/Subscribe.js";
+import JobOpening from "./models/JobOpening.js";
+
+const app = express();
+
+config({ path: "./config/config.env" });
+
+connectToDb();
+
+app.use(cors());
+app.use(express.json());
+
+
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, phone, email, message } = req.body;
+    const contact = new Contact({
+      name,
+      phone,
+      email,
+      message
+    });
+    await contact.save();
+    res.status(201).json({ 
+      success:true,
+      
+      message: 'Contact form submitted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error submitting form', error: error.message });
+  }
+});
+
+app.post('/api/subscribe', async (req, res) => {
+  try {
+    const { email } = req.body;
+    
+    
+    if (!email || typeof email !== "string") {
+      return res.status(400).json({ success: false, message: "Invalid email" });
+    }
+
+    const subscription = new Subscribe({email})
+    await subscription.save();
+
+    res.status(201).json({
+      success: true,
+      message: "Subscribed successfully"
+    });
+
+  } catch (error){
+
+    res.status(500).json({ success: false, message: "Server error", error: error.message });
+  }
+});
+
+app.post("/api/job-opening", upload.single("resume"), async (req, res) => {
+  try {
+    const { name, contact, email, post, experience, otherDetails } = req.body;
+    const file = req.file;
+
+    if (!file) {
+      return res.status(400).json({ success: false, message: "Resume file is required" });
+    }
+
+    const newJob = new JobOpening({
+      name,
+      contact,
+      email,
+      post,
+      experience,
+      otherDetails,
+      resume: file.path
+    });
+
+    await newJob.save();
+
+    res.status(201).json({
+      success: true,
+      message: "Job application submitted successfully.",
+      data: newJob
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server error", error: error.message });
+  }
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+}); 

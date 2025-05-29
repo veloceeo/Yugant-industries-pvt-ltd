@@ -28,6 +28,9 @@ import vector7 from './Vector-7.png';
 import vector8 from './Vector-8.png';
 import vector from './Vector.png';
 import girlSketch from './girlSketch.jpg'
+import sudip from '../assets/01.jpeg'
+import debarshi from '../assets/02.jpeg'
+import sudiptha from '../assets/03.jpeg'
 
 const assets = {
   board,
@@ -59,7 +62,10 @@ const assets = {
   vector6,
   vector7,
   vector8,
-  vector
+  vector,
+  sudip,
+  debarshi,
+  sudiptha
 };
 
 export default assets;

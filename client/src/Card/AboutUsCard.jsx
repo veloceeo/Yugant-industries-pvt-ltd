@@ -23,7 +23,7 @@ const AboutUsCard = () => {
       <img
         src={assets.board}
         alt="About Us"
-        className="rounded-lg shadow-lg object-cover w-full max-w-[300px] sm:max-w-lg md:max-w-xl lg:max-w-2xl h-56 sm:h-72 md:h-96 lg:h-[480px]"
+        className="rounded-lg shadow-lg object-cover w-full max-w-[300px] sm:max-w-lg md:max-w-xl lg:max-w-4xl h-56 sm:h-72 md:h-96 lg:h-[520px]"
       />
     </div>
 

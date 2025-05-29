@@ -91,116 +91,119 @@ const Services = () => {
   }, [serviceIndex]);
 
   return (
-   <div className="flex justify-center" >
-     <div className="py-12 md:py-20 px-4 flex flex-col items-center bg-black text-white">
-      <h1 className="text-3xl sm:text-4xl font-semibold mb-6 md:mb-10 text-center">Services</h1>
+    <div className="flex justify-center" >
+      <div className="py-12 md:py-20 px-4 flex flex-col items-center bg-black text-white">
+        <h1 className="text-3xl sm:text-4xl font-semibold mb-6 md:mb-10 text-center">Services</h1>
 
-      {/* Desktop */}
-<div className="hidden lg:flex items-center w-full max-w-[1200px]  gap-4  justify-between">
-  {/* Left Arrow */}
-  <button onClick={handlePrev} aria-label="Previous services" className="flex-shrink-0">
-    <IoMdArrowDropleftCircle className="text-white text-4xl md:text-5xl hover:scale-110 transition-transform" />
-  </button>
+        {/* Desktop */}
+        <div className="hidden lg:flex items-center w-full max-w-[1200px]  gap-4 px-20 justify-between">
+          {/* Left Arrow */}
+          <button onClick={handlePrev} aria-label="Previous services" className="flex-shrink-0">
+            <IoMdArrowDropleftCircle className="text-white text-4xl md:text-5xl hover:scale-110 transition-transform" />
+          </button>
 
-  {/* Cards container with reduced right margin */}
-  <div className="flex gap-6 overflow-hidden w-full ">
-    {visibleServices.map((service) => (
-      <div
-        key={service.title}
-        className="bg-[#2a2a2a] border border-[#fafafa] rounded-xl shadow-md py-6 px-6 w-[320px] h-auto flex flex-col gap-4 items-center transition-transform duration-500 scale-100 opacity-100"
-      >
-        <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-amber-600/30 mb-4">
-          <img
-            src={service.src}
-            alt={`${service.title} icon`}
-            className="w-6 h-6 rounded-full "
-          />
+
+          <div className="flex gap-6 overflow-hidden w-full ">
+            {visibleServices.map((service) => (
+              <div
+                key={service.title}
+                className="bg-[#2a2a2a] border border-[#fafafa] rounded-xl shadow-md py-6 px-6 w-[30vw] h-auto flex flex-col gap-4 items-center transition-transform duration-500 scale-100 opacity-100"
+              >
+                <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-amber-600/30 mb-4">
+                  <img
+                    src={service.src}
+                    alt={`${service.title} icon`}
+                    className="w-6 h-6 rounded-full "
+                  />
+                </div>
+                <h2 className="text-xl font-semibold text-white mb-3 text-center">{service.title}</h2>
+                <div className="flex-grow overflow-auto px-2">
+                  <p className="text-sm md:text-base text-gray-300">{service.description}</p>
+                </div>
+              </div>
+            ))}
+            <button onClick={handleNext} aria-label="Next services" className="flex-shrink-0 ">
+              <IoMdArrowDroprightCircle className="text-white text-4xl md:text-5xl hover:scale-110 transition-transform" />
+            </button>
+          </div>
+
+
+
         </div>
-        <h2 className="text-xl font-semibold text-white mb-3 text-center">{service.title}</h2>
-        <div className="flex-grow overflow-auto px-2">
-          <p className="text-sm md:text-base text-gray-300">{service.description}</p>
+
+
+
+
+        {/* Navigation dots */}
+        <div className="hidden lg:flex justify-center mt-6 space-x-2 overflow-x-auto max-w-full px-2 py-1">
+          {services.map((_, index) => {
+            const isActive =
+              (index >= serviceIndex && index < serviceIndex + cardsToShow) ||
+              (serviceIndex + cardsToShow > services.length &&
+                index < (serviceIndex + cardsToShow) % services.length);
+
+            return (
+              <button
+                key={index}
+                onClick={() => setServiceIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 flex-shrink-0 ${isActive ? "bg-amber-500 w-4 h-4" : "bg-gray-400"
+                  }`}
+                aria-label={`Go to service ${index + 1}`}
+              />
+            );
+          })}
         </div>
-      </div>
-    ))}
-     <button onClick={handleNext} aria-label="Next services" className="flex-shrink-0 ">
-    <IoMdArrowDroprightCircle className="text-white text-4xl md:text-5xl hover:scale-110 transition-transform" />
-  </button>
-  </div>
 
- 
- 
-</div>
+        {/* Mobile single card */}
+        <div className="flex items-center w-full max-w-xl mx-auto gap-2 md:gap-4 px-2 sm:px-4 md:px-10 justify-between lg:hidden">
+          <button onClick={() => setServiceIndex((serviceIndex - 1 + services.length) % services.length)} aria-label="Previous service" className="flex-shrink-0">
+            <IoMdArrowDropleftCircle className="text-white text-3xl md:text-4xl hover:scale-110 transition" />
+          </button>
+
+          <div className="overflow-hidden w-full max-w-[320px]  sm:h-[350px] md:h-auto flex mx-auto items-center justify-center py-4 sm:py-6 md:py-8">
+            {services.map((service, index) =>
+              index === serviceIndex ? (
+                <div
+                  key={index}
+                  ref={(el) => (cardRefs.current[index] = el)}
+                  className="bg-[#5a5a5a] rounded-xl shadow-md w-full border border-[#fafafa] flex flex-col items-center px-4 py-5 sm:py-6 sm:px-6 gap-3 sm:gap-5 transition-transform duration-500 scale-100 opacity-100"
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-sm sm:rounded-full bg-amber-600/30 mb-3 sm:mb-4">
+                    <img src={service.src} alt={`${service.title} icon`} className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </div>
+                  <h2 className="text-base sm:text-lg font-semibold text-white text-center mb-2 sm:mb-3">
+                    {service.title}
+                  </h2>
+                  <div className="px-1">
+                    <p className="text-[10px] sm:text-base text-gray-300 text-center">{service.description}</p>
+                  </div>
+                </div>
+              ) : null
+            )}
+          </div>
 
 
 
 
-      {/* Navigation dots */}
-      <div className="hidden lg:flex justify-center mt-6 space-x-2 overflow-x-auto max-w-full px-2 py-1">
-        {services.map((_, index) => {
-          const isActive =
-            (index >= serviceIndex && index < serviceIndex + cardsToShow) ||
-            (serviceIndex + cardsToShow > services.length &&
-              index < (serviceIndex + cardsToShow) % services.length);
+          <button onClick={() => setServiceIndex((serviceIndex + 1) % services.length)} aria-label="Next service" className="flex-shrink-0">
+            <IoMdArrowDroprightCircle className="text-white text-3xl md:text-4xl hover:scale-110 transition" />
+          </button>
+        </div>
 
-          return (
+        {/* Navigation dots mobile */}
+        <div className="flex justify-center mt-4 sm:mt-6 space-x-1 sm:space-x-2 overflow-x-auto max-w-full px-2 py-1 lg:hidden">
+          {services.map((_, index) => (
             <button
               key={index}
               onClick={() => setServiceIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 flex-shrink-0 ${
-                isActive ? "bg-amber-500 w-4 h-4" : "bg-gray-400"
-              }`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 flex-shrink-0 ${index === serviceIndex ? "bg-amber-500 w-3 sm:w-4" : "bg-gray-400"
+                }`}
               aria-label={`Go to service ${index + 1}`}
             />
-          );
-        })}
-      </div>
-
-      {/* Mobile single card */}
-      <div className="flex items-center w-full max-w-xl mx-auto gap-2 md:gap-4 px-2 sm:px-4 md:px-10 justify-between lg:hidden">
-        <button onClick={() => setServiceIndex((serviceIndex - 1 + services.length) % services.length)} aria-label="Previous service" className="flex-shrink-0">
-          <IoMdArrowDropleftCircle className="text-white text-3xl md:text-4xl hover:scale-110 transition" />
-        </button>
-
-        <div className="overflow-hidden w-full max-w-[280px] h-[420px] flex mx-auto">
-          {services.map((service, index) =>
-            index === serviceIndex ? (
-              <div
-                key={index}
-                ref={(el) => (cardRefs.current[index] = el)}
-                className="bg-[#5a5a5a] rounded-xl shadow-md py-4 sm:py-2 px-4 sm:px-6 w-full flex flex-col gap-3 sm:gap-5 items-center transition-transform duration-500 scale-100 opacity-100"
-              >
-                <div className="w-10 sm:w-12 h-10 sm:h-12 mx-auto flex items-center justify-center rounded-sm md:rounded-full bg-amber-600/30 mb-2 sm:mb-4">
-                  <img src={service.src} alt={`${service.title} icon`} className="w-5 sm:w-6 h-5 sm:h-6" />
-                </div>
-                <h2 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-4 text-center">{service.title}</h2>
-                <div className="max-h-48 sm:max-h-70 px-1">
-                  <p className="text-xs sm:text-sm md:text-base text-gray-300">{service.description}</p>
-                </div>
-              </div>
-            ) : null
-          )}
+          ))}
         </div>
-
-        <button onClick={() => setServiceIndex((serviceIndex + 1) % services.length)} aria-label="Next service" className="flex-shrink-0">
-          <IoMdArrowDroprightCircle className="text-white text-3xl md:text-4xl hover:scale-110 transition" />
-        </button>
-      </div>
-
-      {/* Navigation dots mobile */}
-      <div className="flex justify-center mt-4 sm:mt-6 space-x-1 sm:space-x-2 overflow-x-auto max-w-full px-2 py-1 lg:hidden">
-        {services.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setServiceIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 flex-shrink-0 ${
-              index === serviceIndex ? "bg-amber-500 w-3 sm:w-4" : "bg-gray-400"
-            }`}
-            aria-label={`Go to service ${index + 1}`}
-          />
-        ))}
       </div>
     </div>
-   </div>
   );
 };
 

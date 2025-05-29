@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { CiMenuBurger } from 'react-icons/ci';
 import assets from '../assets/asset';
+import React from 'react';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

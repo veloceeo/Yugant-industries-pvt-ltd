@@ -3,16 +3,18 @@ import assets from '../assets/asset';
 import { GrLocation } from 'react-icons/gr';
 import { HiOutlineMail } from 'react-icons/hi';
 import { HiPhone } from 'react-icons/hi2';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate=useNavigate()
   return (
-    <footer className="bg-black text-white font-sans">
+    <footer className="bg-black  text-white font-sans">
       
         
       
-      <div className=" px-6 py-6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center ">
+      <div className=" px-6 mb-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-10 justify-items-center  ">
         {/* Logo & Contact Info */}
-        <div className="flex flex-col gap-4 text-sm md:text-base ">
+        <div className="flex flex-col gap-4 text-sm md:text-base mb-0 md:mb-4 ">
            <img src={assets.yugant} alt='Yugant Logo' className='  w-24 h-24 md:w-32 md:h-32  object-contain' />
           
           <div className='flex space-x-4'>
@@ -51,38 +53,38 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Use Cases */}
-        <div className='flex flex-col items-center justify-center text-center mt-8 md:mt-0 ' >
-          <p className='font-bold text-sm  md:text-lg mb-4'>Use Cases</p>
-          <ul className=' space-y-2 text-[12px] sm:text-sm md:text-base text-gray-300'>
-            <li className='cursor-pointer hover:text-white'>UI Design</li>
-            <li className='cursor-pointer hover:text-white'>UX Design</li>
-            <li className='cursor-pointer hover:text-white'>Wireframing</li>
-            <li className='cursor-pointer hover:text-white'>Diagramming</li>
-            <li className='cursor-pointer hover:text-white'>Brainstorming</li>
-            <li className='cursor-pointer hover:text-white'>Online Whiteboard</li>
-            <li className='cursor-pointer hover:text-white'>Team Collaboration</li>
+        {/* Quick links */}
+        <div className='flex flex-col items-center justify-center text-center mt-8 md:mt-0  ' >
+          <p className='font-bold text-sm  md:text-lg mb-5  md:mb-10 '>Yugant</p>
+          <ul className=' space-y-2 text-sm sm:text-base md:text-lg text-gray-300'>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/')} >Home</li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/about') }>About Us </li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/team') } > Our Team</li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/services') } >Service</li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/career') } >Career</li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/contact') } >Contact</li>
+        
           </ul>
         </div>
 
-        {/* Explore */}
-           <div className='flex flex-col items-center justify-center text-center ' >
-          <p className='font-bold text-sm  md:text-lg  mb-4'>Explore</p>
-          <ul className=' space-y-2 text-sm text-gray-300  text-[12px] sm:text-sm md:text-base '>
-            <li className='cursor-pointer hover:text-white'>Design</li>
-            <li className='cursor-pointer hover:text-white'>Prototyping</li>
-            <li className='cursor-pointer hover:text-white'>Development Features</li>
-            <li className='cursor-pointer hover:text-white'>Design Systems</li>
-            <li className='cursor-pointer hover:text-white'>Collaboration Features</li>
-            <li className='cursor-pointer hover:text-white'>Design Process</li>
-            <li className='cursor-pointer hover:text-white'>Figma</li>
+        {/* veloceo */}
+        <div className='flex flex-col items-center justify-center text-center mt-4 md:mt-0  ' >
+          <p className='font-bold text-sm  md:text-lg  mb-5  md:mb-10 '>Veloceo</p>
+          <ul className=' space-y-2 text-sm sm:text-base md:text-lg text-gray-300'>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >Home</li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >About Us</li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >Innovation</li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >Vision</li>
+            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >Contact Us</li>
           </ul>
         </div>
+
+    
 
         {/* Resources */}
           <div className='flex flex-col items-center justify-center text-center' >
-          <p className='font-bold text-sm  md:text-lg  mb-4   '>Resources</p>
-          <ul className=' space-y-2 text-sm text-gray-300 text-[12px] sm:text-sm md:text-base '>
+          <p className='font-bold text-sm  md:text-lg mb-5   md:mb-10   '>Resources</p>
+          <ul className=' space-y-2 text-sm sm:text-base md:text-lg text-gray-300  '>
             <li className='cursor-pointer hover:text-white'>Blog</li>
             <li className='cursor-pointer hover:text-white'>Best Practices</li>
             <li className='cursor-pointer hover:text-white'>Colors</li>
@@ -103,5 +105,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
 
 

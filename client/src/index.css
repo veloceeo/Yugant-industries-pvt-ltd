@@ -23,10 +23,7 @@ html {
     margin: 0px;
     box-sizing: border-box;
 }
-input:focus{
-    border: 2px solid rgb(249, 252, 255) !important;
-    outline: none;
-}
+
 li:hover{
     text-decoration: underline;
 }
