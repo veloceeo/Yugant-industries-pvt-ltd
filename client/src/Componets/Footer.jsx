@@ -7,6 +7,12 @@ import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const navigate=useNavigate()
+  
+
+  const handleBrandNav = (hash) => {
+    navigate(`/brands${hash}`);
+  };
+  
   return (
     <footer className="bg-black  text-white font-sans">
       
@@ -69,20 +75,20 @@ const Footer = () => {
 
         {/* veloceo */}
         <div className='flex flex-col items-center justify-center text-center mt-4 md:mt-0  ' >
-          <p className='font-bold text-sm  md:text-lg  mb-5  md:mb-10 '>Veloceo</p>
-          <ul className=' space-y-2 text-sm sm:text-base md:text-lg text-gray-300'>
-            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >Home</li>
-            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >About Us</li>
-            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >Innovation</li>
-            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >Vision</li>
-            <li className='cursor-pointer hover:text-white' onClick={()=>navigate('/brands')} >Contact Us</li>
+          <p className='font-bold text-sm  md:text-lg  mb-5  md:mb-10 pb-8 '>Veloceeo</p>
+          <ul className=' space-y-2 text-sm sm:text-base md:text-lg text-gray-300  '>
+        <li className="cursor-pointer hover:text-white" onClick={() => handleBrandNav('#home')}>Home</li>
+            <li className="cursor-pointer hover:text-white" onClick={() => handleBrandNav('#about')}>About Us</li>
+            <li className="cursor-pointer hover:text-white" onClick={() => handleBrandNav('#innovation')}>Innovation</li>
+            <li className="cursor-pointer hover:text-white" onClick={() => handleBrandNav('#vision')}>Vision</li>
+            <li className="cursor-pointer hover:text-white" onClick={() => handleBrandNav('#contact')}>Contact Us</li>
           </ul>
         </div>
 
     
 
         {/* Resources */}
-          <div className='flex flex-col items-center justify-center text-center' >
+          <div className='flex flex-col items-center justify-center text-center mt-4 md:mt-7 ' >
           <p className='font-bold text-sm  md:text-lg mb-5   md:mb-10   '>Resources</p>
           <ul className=' space-y-2 text-sm sm:text-base md:text-lg text-gray-300  '>
             <li className='cursor-pointer hover:text-white'>Blog</li>

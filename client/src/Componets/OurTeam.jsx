@@ -75,7 +75,7 @@ const OurTeam = () => {
 
           {/* Card */}
           <div className="w-full max-w-sm mx-auto px-4">
-            <div className={`${team[teamIndex].bgColor} rounded-3xl p-10 shadow-2xl`}>
+            <div className={`${team[teamIndex].bgColor}  border border-[#fafafa] rounded-3xl p-10 shadow-2xl`}>
               <div className="mb-4">
                 <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-white">
                   <img
@@ -122,14 +122,14 @@ const OurTeam = () => {
         {team.map((member) => (
           <div
             key={member.id}
-            className={`${member.bgColor} rounded-3xl p-10 shadow-2xl text-center`}
+            className={`${member.bgColor} rounded-3xl p-10 shadow-2xl text-center border-2 border-[#fafafa]  `}
           >
             <div className="mb-4">
               <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full  object-cover"
                 />
               </div>
             </div>
