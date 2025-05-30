@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import { config } from "dotenv";
 import express from 'express';
 import cors from 'cors';
@@ -7,6 +10,8 @@ import Subscribe from "./models/Subscribe.js";
 import JobOpening from "./models/JobOpening.js";
 import VeloceeoContact from "./models/VeloceeoContact.js";
 import YugantContact from "./models/YugantContact.js";
+import nodemailer from 'nodemailer';
+
 
 
 const app = express();
@@ -99,6 +104,10 @@ app.post("/api/job-opening", upload.single("resume"), async (req, res) => {
     });
 
     await newJob.save();
+
+
+
+
 
     res.status(201).json({
       success: true,
