@@ -21,7 +21,7 @@ const OurTeam = () => {
       role: "CEO",
       image:assets.sudiptha ,
       description: "Leads Veloceco's vision, strategy, and growth, driving overall business development and operations.",
-      bgColor: "bg-[#A75633]",
+      bgColor: "bg-[#F7F4E8]",
     },
     {
       id: 3,

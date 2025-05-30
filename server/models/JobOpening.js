@@ -7,7 +7,7 @@ const jobOpeningSchema = new mongoose.Schema({
   post: { type: String, required: true },
   experience: { type: String, required: true },
   otherDetails: { type: String },
-  resume: { type: String, required: true }, // local file path
+  resumeUrl: { type: String, required: true }, 
   createdAt: { type: Date, default: Date.now }
 });
 

@@ -25,7 +25,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/yugantcontact`,
         formData
       );
 

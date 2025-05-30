@@ -1,8 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-
-
 const Career = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -31,26 +29,24 @@ const Career = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!resume) {
-      alert("Please upload a resume file.");
-      return;
-    }
-
     const submissionData = new FormData();
 
-    
     for (const [key, value] of Object.entries(formData)) {
       submissionData.append(key, value);
     }
 
-    submissionData.append("resume", resume);
+    submissionData.append("resume", resume); 
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/job-opening`,
-        submissionData
+        `${import.meta.env.VITE_BACKEND_URL}/api/job-opening`, 
+        submissionData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
-      
 
       if (response.data.success) {
         setSuccessMessage("Thanks for applying!");
@@ -62,7 +58,7 @@ const Career = () => {
           experience: "",
           otherDetails: "",
         });
-        setResume(null);
+        setResume("");
 
         setTimeout(() => {
           setSuccessMessage("");
@@ -86,9 +82,7 @@ const Career = () => {
         )}
 
         <div>
-          <label htmlFor="name" className="block mb-1">
-            Name
-          </label>
+          <label htmlFor="name" className="block mb-1">Name</label>
           <input
             type="text"
             id="name"
@@ -96,15 +90,13 @@ const Career = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Enter your name"
-            className="w-full px-4 py-2 bg-black border border-gray-600 rounded focus:outline-none focus:ring-2 "
+            className="w-full px-4 py-2 bg-black border border-gray-600 rounded focus:outline-none focus:ring-2"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="contact" className="block mb-1">
-            Contact Number
-          </label>
+          <label htmlFor="contact" className="block mb-1">Contact Number</label>
           <input
             type="text"
             id="contact"
@@ -118,9 +110,7 @@ const Career = () => {
         </div>
 
         <div>
-          <label htmlFor="email" className="block mb-1">
-            Email
-          </label>
+          <label htmlFor="email" className="block mb-1">Email</label>
           <input
             type="email"
             id="email"
@@ -134,9 +124,7 @@ const Career = () => {
         </div>
 
         <div>
-          <label htmlFor="post" className="block mb-1">
-            Apply for Which Post?
-          </label>
+          <label htmlFor="post" className="block mb-1">Apply for Which Post?</label>
           <select
             id="post"
             name="post"
@@ -145,9 +133,7 @@ const Career = () => {
             className="w-full px-4 py-2 bg-black border border-gray-600 rounded text-gray-400 focus:outline-none focus:ring-2"
             required
           >
-            <option value="" disabled>
-              Select your interest
-            </option>
+            <option value="" disabled>Select your interest</option>
             <option value="developer">Developer</option>
             <option value="designer">Designer</option>
             <option value="marketing">Marketing</option>
@@ -167,9 +153,7 @@ const Career = () => {
         </div>
 
         <div>
-          <label htmlFor="otherDetails" className="block mb-1">
-            Other Details
-          </label>
+          <label htmlFor="otherDetails" className="block mb-1">Other Details</label>
           <textarea
             id="otherDetails"
             name="otherDetails"
@@ -181,16 +165,14 @@ const Career = () => {
         </div>
 
         <div>
-          <label htmlFor="resume" className="block mb-3">
-            Upload Your Resume
-          </label>
+          <label htmlFor="resume" className="block mb-3">Upload Your Resume</label>
           <input
             type="file"
             id="resume"
             name="resume"
             accept=".pdf,.doc,.docx"
             onChange={handleFileChange}
-            className=" text-[10px] sm:text-base md:text-xl lg:text-lg file:border-white file:border file:rounded file:text-white file:bg-black"
+            className="text-[10px] sm:text-base md:text-xl lg:text-lg file:border-white file:border file:rounded file:text-white file:bg-black"
             required
           />
         </div>

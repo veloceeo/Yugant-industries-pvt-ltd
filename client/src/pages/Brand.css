@@ -295,6 +295,7 @@ body {
   height: auto;
   background-color: #a35439;
   color: white;
+  width: 100%;
 }
 
 .footer-top {
@@ -302,6 +303,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 50px 60px;
+  width: 100%;
 }
 
 .footer-left {
@@ -504,6 +506,62 @@ body {
 
 .slick-list {
   margin: 0 -15px;
+}
+
+/* Large screens and XL screens - Footer equal spacing fix */
+@media (min-width: 1024px) {
+  .footer {
+    width: 100%;
+  }
+  
+  .footer-top {
+    width: 100%;
+    max-width: none;
+    padding: 50px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    flex: 3;
+  }
+  
+  .footer-column {
+    flex: 1;
+    text-align: left;
+    min-width: 0;
+    padding: 0 20px;
+  }
+  
+  .footer-column:first-child {
+    padding-left: 0;
+  }
+  
+  .footer-column:last-child {
+    padding-right: 0;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+  .footer-top {
+    padding: 50px 80px;
+  }
+  
+  .footer-columns {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    padding: 0 30px;
+  }
 }
 
 @media (max-width: 1024px) {

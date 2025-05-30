@@ -1,11 +1,13 @@
 import { config } from "dotenv";
 import express from 'express';
-import Contact from './models/Contact.js';
 import cors from 'cors';
 import connectToDb from "./db/db.js";
 import upload from "./middleware/upload.js";
 import Subscribe from "./models/Subscribe.js";
 import JobOpening from "./models/JobOpening.js";
+import VeloceeoContact from "./models/VeloceeoContact.js";
+import YugantContact from "./models/YugantContact.js";
+
 
 const app = express();
 
@@ -17,16 +19,34 @@ app.use(cors());
 app.use(express.json());
 
 
-app.post('/api/contact', async (req, res) => {
+app.post('/api/veloceeocontact', async (req, res) => {
   try {
     const { name, phone, email, message } = req.body;
-    const contact = new Contact({
+    const veloceeeocontact = new VeloceeoContact({
       name,
       phone,
       email,
       message
     });
-    await contact.save();
+    await veloceeeocontact.save();
+    res.status(201).json({ 
+      success:true,
+      
+      message: 'Contact form submitted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error submitting form', error: error.message });
+  }
+});
+app.post('/api/yugantcontact', async (req, res) => {
+  try {
+    const { name, phone, email, message } = req.body;
+    const yugantcontact = new YugantContact({
+      name,
+      phone,
+      email,
+      message
+    });
+    await yugantcontact.save();
     res.status(201).json({ 
       success:true,
       
@@ -62,10 +82,10 @@ app.post('/api/subscribe', async (req, res) => {
 app.post("/api/job-opening", upload.single("resume"), async (req, res) => {
   try {
     const { name, contact, email, post, experience, otherDetails } = req.body;
-    const file = req.file;
+    const resumeUrl = req.file?.path;
 
-    if (!file) {
-      return res.status(400).json({ success: false, message: "Resume file is required" });
+    if (!resumeUrl) {
+      return res.status(400).json({ success: false, message: "Resume upload failed" });
     }
 
     const newJob = new JobOpening({
@@ -75,7 +95,7 @@ app.post("/api/job-opening", upload.single("resume"), async (req, res) => {
       post,
       experience,
       otherDetails,
-      resume: file.path
+      resumeUrl,
     });
 
     await newJob.save();
@@ -83,13 +103,13 @@ app.post("/api/job-opening", upload.single("resume"), async (req, res) => {
     res.status(201).json({
       success: true,
       message: "Job application submitted successfully.",
-      data: newJob
+      data: newJob,
     });
   } catch (error) {
+    console.error("Job submission error:", error.message);
     res.status(500).json({ success: false, message: "Server error", error: error.message });
   }
 });
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

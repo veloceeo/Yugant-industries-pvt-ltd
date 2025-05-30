@@ -86,7 +86,7 @@ const TechCarousel = () => {
 };
 
 function Brand() {
-    const location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     const hash = location.hash;
@@ -119,7 +119,7 @@ function Brand() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await axios.post( `${import.meta.env.VITE_BACKEND_URL}/api/contact`, formData);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/veloceeocontact`, formData);
       if (response.status === 201) {
         setFormData({
           name: '',
@@ -167,7 +167,7 @@ function Brand() {
         <div className="about-content">
           <div className="about-text">
             <p>
-              A New Era of Q-Commerce. Veloceeo, a flagship initiative by Yugant Industries Pvt. Ltd., is redefining quick commerce by blending speed, sustainability, and local empowerment...
+              A New Era of Q-Commerce. Veloceeo, a flagship initiative by Yugant Industries Pvt. Ltd., is redefining quick commerce by blending speed, sustainability, and local empowerment. Unlike conventional dark-store models, Veloceeo champions a region-first approach - integrating neighborhood stores, kirana outlets, and micro-warehouses into a smart, tech-enabled delivery network. Built to operate without costly infrastructure, Veloceeo is designed to scale rapidly while keeping commerce hyperlocal, inclusive, and future-ready.
             </p>
           </div>
           <div className="about-image">
@@ -185,7 +185,7 @@ function Brand() {
           <TechCarousel />
         </div>
         <p className="tech-paragraph-2">
-          Through these innovations, Veloceeo empowers local sellers...
+          Through these innovations, Veloceeo empowers local sellers to operate with the efficiency of large-scale chains - bridging the digital divide in urban retail.
         </p>
       </section>
 
@@ -196,7 +196,7 @@ function Brand() {
           <div className="impact-text">
             <p className="impact-text-1">Local First, Nationwide Next</p>
             <p className="impact-text-2">
-              Veloceeo is more than a delivery service — it's a movement toward inclusive digital commerce...
+              Veloceeo is more than a delivery service — it's a movement toward inclusive digital commerce. By placing regional vendors at the heart of its logistics model, Veloceeo drives economic participation, customer trust, and sustainable urban development. With its scalable micro-logistics framework, the brand is poised to expand across India's cities and towns - ensuring that every essential reaches consumers fast, fairly, and locally.
             </p>
           </div>
         </div>
@@ -242,38 +242,25 @@ function Brand() {
           </div>
 
           <div className="footer-columns">
-                <div className="footer-column">
+            <div className="footer-column">
               <h4>Veloceeo</h4>
               <ul>
-               <li><a href="#home">Home</a></li>
-          <li><a href="#about" >About Us</a></li>
-          <li><a href="#innovation" >Innovation</a></li>
-          <li><a href="#vision" >Vision</a></li>
-          <li><a href="#contact" >Contact Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about" >About Us</a></li>
+                <li><a href="#innovation" >Innovation</a></li>
+                <li><a href="#vision" >Vision</a></li>
+                <li><a href="#contact" >Contact Us</a></li>
               </ul>
             </div>
-            <div className="footer-column">
-              <h4>Use cases</h4>
+            <div className='footer-column' >
+              <h4>Yugant</h4>
               <ul>
-                <li>UI design</li>
-                <li>UX design</li>
-                <li>Wireframing</li>
-                <li>Diagramming</li>
-                <li>Brainstorming</li>
-                <li>Online whiteboard</li>
-                <li>Team collaboration</li>
-              </ul>
-            </div>
-            <div className="footer-column">
-              <h4>Explore</h4>
-              <ul>
-                <li>Design</li>
-                <li>Prototyping</li>
-                <li>Development features</li>
-                <li>Design systems</li>
-                <li>Collaboration features</li>
-                <li>Design process</li>
-                <li>FigJam</li>
+                <li onClick={() => navigate('/')} ><a >Home</a></li>
+                <li onClick={() => navigate('/about')}><a>About Us</a> </li>
+                <li onClick={() => navigate('/team')} ><a>Our Team</a></li>
+                <li onClick={() => navigate('/services')} ><a>Services</a></li>
+                <li onClick={() => navigate('/career')} ><a>Career</a></li>
+                <li onClick={() => navigate('/contact')} ><a>Contact</a></li>
               </ul>
             </div>
             <div className="footer-column">
