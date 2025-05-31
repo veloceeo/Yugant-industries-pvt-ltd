@@ -3,8 +3,8 @@ import { Suspense, lazy } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Header from '../Componets/Header'
 import Footer from '../Componets/Footer'
-import NewsLetter from '../componets/NewsLetter'
-import Spinner from '../Componets/spinner'
+import NewsLetter from '../Componets/NewsLetter'
+import Spinner from '../Componets/Spinner'
 
 
 // Lazy load pages
