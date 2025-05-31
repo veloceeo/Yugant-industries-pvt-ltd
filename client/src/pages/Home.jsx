@@ -3,7 +3,7 @@ import ContactCard from '../Card/ContactCard'
 import JobOpeningCard from "../Card/JobOpeningCard";
 import OurBrand from "../Componets/OurBrand";
 import ServiceCard from '../Card/ServiceCard';
-import OurTeam from '../componets/OurTeam';
+import OurTeam from '../Componets/OurTeam'
 
 
 
