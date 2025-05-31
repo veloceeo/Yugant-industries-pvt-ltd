@@ -24,7 +24,7 @@ connectToDb();
 app.use(express.json());
 const corsOptions = {
   origin: [
-    `${process.env.FRONTEND_URL}`,  
+    process.env.FRONTEND_URL,  
     'http://localhost:3000'                                
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
