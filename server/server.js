@@ -20,7 +20,7 @@ config({ path: "./config/config.env" });
 
 connectToDb();
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 app.get('/',(req,res)=>{
