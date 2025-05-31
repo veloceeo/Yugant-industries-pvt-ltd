@@ -2,7 +2,7 @@ import React from 'react'
 import { Suspense, lazy } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Header from '../Componets/Header'
-import Footer from '../componets/Footer'
+import Footer from '../Componets/Footer'
 import NewsLetter from '../componets/NewsLetter'
 import Spinner from '../Componets/spinner'
 
