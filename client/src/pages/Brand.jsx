@@ -241,6 +241,7 @@ function Brand() {
               required
               className="form-input"
               disabled={isSubmitting}
+              style={{color:'black'}}
             />
             <label className="form-label">Phone *</label>
             <input
@@ -252,6 +253,7 @@ function Brand() {
               required
               className="form-input"
               disabled={isSubmitting}
+              style={{color:'black'}}
             />
             <label className="form-label">Email *</label>
             <input
@@ -263,6 +265,7 @@ function Brand() {
               required
               className="form-input"
               disabled={isSubmitting}
+              style={{color:'black'}}
             />
             <label className="form-label">Message *</label>
             <textarea
@@ -273,6 +276,7 @@ function Brand() {
               required
               className="form-textarea"
               disabled={isSubmitting}
+              style={{color:'black'}}
             ></textarea>
             <button
               type="submit"
