@@ -55,17 +55,19 @@ const OurTeam = () => {
   }, [teamIndex]);
 
   return (
- <div className=" bg-[#5a5a5a] py-16 px-4">
+ <div className=" bg-[#5a5a5a] py-16">
       {/* Title */}
-      <div className="flex items-center justify-end mb-10 ">
+    
+            <div className="flex items-center justify-end mb-10 ">
                 <span className="text-white   text-4xl sm:text-5xl ">
-                  Our
+                    Our
                 </span>
-                <span className=" text-white   text-4xl sm:text-5xl  shadow-lg w-[190px] h-[100px]  flex  items-center justify-start "   style={{ backgroundImage: `url(${assets.rectangle56})` }}>
-                  Team
+                <span className=" text-white   text-4xl sm:text-5xl  shadow-lg w-[190px] h-[100px]  flex  items-center justify-start " style={{ backgroundImage: `url(${assets.rectangle56})` }}>
+                    Team
                 </span>
-              </div>
+            </div>
 
+      
       {/* Mobile / Tablet View */}
       <div className="lg:hidden px-4 ">
         <div className=" flex items-center justify-center gap-0 sm:gap-2  ">
