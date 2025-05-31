@@ -23,6 +23,10 @@ connectToDb();
 app.use(cors());
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+  res.send("api working")
+})
+
 
 app.post('/api/veloceeocontact', async (req, res) => {
   try {
