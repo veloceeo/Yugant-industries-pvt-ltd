@@ -10,7 +10,7 @@ import Subscribe from "./models/Subscribe.js";
 import JobOpening from "./models/JobOpening.js";
 import VeloceeoContact from "./models/VeloceeoContact.js";
 import YugantContact from "./models/YugantContact.js";
-import nodemailer from 'nodemailer';
+
 
 
 
@@ -22,21 +22,12 @@ connectToDb();
 
 
 app.use(express.json());
-const corsOptions = {
-  origin: [
-    process.env.FRONTEND_URL,  
-    'http://localhost:3000'                                
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+import cors from 'cors';
 
- 
-};
+app.use(cors());       
 
+app.options('*', cors());
 
-app.use(cors(corsOptions));
-
-
-app.options('*', cors(corsOptions));
 
 app.get('/',(req,res)=>{
   res.send("api working")
