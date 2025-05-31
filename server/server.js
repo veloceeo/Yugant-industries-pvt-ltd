@@ -20,8 +20,12 @@ config({ path: "./config/config.env" });
 
 connectToDb();
 
-app.use(cors({ origin: '*' }));
+
 app.use(express.json());
+app.use(cors());
+
+// Handle preflight requests
+app.options('*', cors());
 
 app.get('/',(req,res)=>{
   res.send("api working")
