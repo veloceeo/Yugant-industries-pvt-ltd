@@ -57,9 +57,14 @@ const OurTeam = () => {
   return (
  <div className=" bg-[#5a5a5a] py-16 px-4">
       {/* Title */}
-      <div className="text-center mb-10">
-        <h1 className="text-5xl md:text-7xl text-white font-bold">Our Team</h1>
-      </div>
+      <div className="flex items-center justify-end mb-10 ">
+                <span className="text-white   text-4xl sm:text-5xl ">
+                  Our
+                </span>
+                <span className=" text-white   text-4xl sm:text-5xl  shadow-lg w-[190px] h-[100px]  flex  items-center justify-start "   style={{ backgroundImage: `url(${assets.rectangle56})` }}>
+                  Team
+                </span>
+              </div>
 
       {/* Mobile / Tablet View */}
       <div className="lg:hidden px-4 ">
