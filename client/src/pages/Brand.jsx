@@ -106,6 +106,7 @@ function Brand() {
     email: '',
     message: ''
   });
+    const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -127,7 +128,7 @@ function Brand() {
           email: '',
           message: ''
         });
-        alert('Form submitted successfully!');
+          setShowModal(true);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -136,6 +137,17 @@ function Brand() {
       setIsSubmitting(false);
     }
   };
+
+    useEffect(() => {
+    if (showModal) {
+      const timer = setTimeout(() => {
+        setShowModal(false);
+      }, 5000);
+
+   
+      return () => clearTimeout(timer);
+    }
+  }, [showModal]);
 
   const toggleMenu = () => setShowMenu(!showMenu);
   const closeMenu = () => setShowMenu(false);
@@ -207,17 +219,66 @@ function Brand() {
       </section>
 
       <section className="contact-section-1">
+
         <div className="contact-form-container">
+          {showModal && (
+            <div className="modal-overlay" style={{color:'green' ,fontSize:'20px' ,textAlign:'center' }} >
+           
+                
+                <p>Thank you for Contacting Us </p>
+              
+              </div>
+            
+          )}
           <form onSubmit={handleSubmit}>
             <label className="form-label">Name *</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your name" required className="form-input" disabled={isSubmitting} />
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              required
+              className="form-input"
+              disabled={isSubmitting}
+            />
             <label className="form-label">Phone *</label>
-            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter your phone number" required className="form-input" disabled={isSubmitting} />
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Enter your phone number"
+              required
+              className="form-input"
+              disabled={isSubmitting}
+            />
             <label className="form-label">Email *</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter your email address" required className="form-input" disabled={isSubmitting} />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email address"
+              required
+              className="form-input"
+              disabled={isSubmitting}
+            />
             <label className="form-label">Message *</label>
-            <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Type your message here..." required className="form-textarea" disabled={isSubmitting}></textarea>
-            <button type="submit" className="submit-button" disabled={isSubmitting}>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Type your message here..."
+              required
+              className="form-textarea"
+              disabled={isSubmitting}
+            ></textarea>
+            <button
+              type="submit"
+              className="submit-button"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </form>
@@ -226,6 +287,8 @@ function Brand() {
           <img src={contactImage} alt="Contact Us" className="contact-image" />
         </div>
       </section>
+
+
 
       <footer className="footer">
         <div className="footer-top">

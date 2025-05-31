@@ -508,7 +508,7 @@ body {
   margin: 0 -15px;
 }
 
-/* Large screens and XL screens - Footer equal spacing fix */
+
 @media (min-width: 1024px) {
   .footer {
     width: 100%;
@@ -548,7 +548,7 @@ body {
   }
 }
 
-/* Extra large screens */
+
 @media (min-width: 1200px) {
   .footer-top {
     padding: 50px 80px;

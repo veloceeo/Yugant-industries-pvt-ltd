@@ -5,6 +5,7 @@ import axios from 'axios'
 
 
 const ContactCard = () => {
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
@@ -20,29 +21,34 @@ const ContactCard = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-        try {
-            const res = await axios.post(
-                `${import.meta.env.VITE_BACKEND_URL}/api/yugantcontact`,
-                formData
-            );
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/yugantcontact`,
+      formData
+    );
 
-            if (res.data.success) {
-                setSuccessMsg("Contact form submitted successfully.");
-                setErrorMsg("");
-                setFormData({ name: "", phone: "", email: "", message: "" });
+    if (res.data.success) {
+      setSuccessMsg("Thanks for Contacting Us");
+      setErrorMsg("");
+      setFormData({ name: "", phone: "", email: "", message: "" });
+       setLoading(false);
 
-                setTimeout(() => setSuccessMsg(""), 5000);
-            }
-        } catch (error) {
-            setErrorMsg("Failed to submit. Please try again.");
-            setSuccessMsg("");
-            setTimeout(() => setErrorMsg(""), 5000);
-        }
-    };
+      setTimeout(() => setSuccessMsg(""), 5000);
+    }
 
+   
+  } catch (error) {
+    setErrorMsg("Failed to submit. Please try again.");
+    setSuccessMsg("");
+
+    setTimeout(() => setErrorMsg(""), 5000);
+    setLoading(false); 
+  }
+};
     return (
         <div className="py-16 bg-black font-sans overflow-hidden">
             <div className="flex items-center justify-end mb-10">
@@ -115,10 +121,15 @@ const ContactCard = () => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-white text-black font-semibold py-3 rounded-md hover:bg-slate-200 transition-all"
+                            disabled={loading}
+                            className={`w-full font-semibold py-3 rounded-md transition-all ${loading
+                                    ? "bg-gray-400 text-white cursor-not-allowed"
+                                    : "bg-white text-black hover:bg-slate-200"
+                                }`}
                         >
-                            Submit
+                            {loading ? "Submitting..." : "Submit"}
                         </button>
+
                     </form>
 
                     {/* Image Section */}
