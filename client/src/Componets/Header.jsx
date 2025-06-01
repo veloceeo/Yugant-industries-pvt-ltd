@@ -3,6 +3,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { CiMenuBurger } from 'react-icons/ci';
 import assets from '../assets/asset';
 import React from 'react';
+import { RxCross2 } from 'react-icons/rx';
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,7 +35,7 @@ const Header = () => {
       className="relative w-full bg-cover bg-center h-screen"
       style={{ backgroundImage: `url(${assets.team})`, opacity: 0.8 }}
     >
-      <div className="bg-black bg-opacity-80 h-[133px] ">
+      <div className="bg-black bg-opacity-80 h-[133px]  ">
         {/* Navigation Bar */}
         <div className="flex justify-between items-center h-[133px] px-6 py-3">
           {/* Logo */}
@@ -66,16 +68,21 @@ const Header = () => {
         </div>
 
         {/* Mobile Dropdown Menu */}
-        {menuOpen && (
-          <div className="fixed  right-0 w-1/2 h-[calc(100vh-133px)] bg-black bg-opacity-80 text-white px-6 py-4 flex flex-col z-50 space-y-4 rounded-tl-md ">
-            <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
-            <NavLink to="/about" onClick={() => setMenuOpen(false)}>About Us</NavLink>
-            <NavLink to="/team" onClick={() => setMenuOpen(false)}>Our Team</NavLink>
-            <NavLink to="/services" onClick={() => setMenuOpen(false)}>Services</NavLink>
-            <NavLink to="/career" onClick={() => setMenuOpen(false)}>Career</NavLink>
-            <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</NavLink>
-          </div>
-        )}
+    {menuOpen && (
+  <div className="absolute right-0 top-[133px] w-1/2 h-2/5 overflow-y-auto bg-black bg-opacity-80 text-white px-6 py-4 flex flex-col z-50 space-y-4 rounded-tl-md md:hidden">
+    
+
+
+
+    <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
+    <NavLink to="/about" onClick={() => setMenuOpen(false)}>About Us</NavLink>
+    <NavLink to="/team" onClick={() => setMenuOpen(false)}>Our Team</NavLink>
+    <NavLink to="/services" onClick={() => setMenuOpen(false)}>Services</NavLink>
+    <NavLink to="/career" onClick={() => setMenuOpen(false)}>Career</NavLink>
+    <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</NavLink>
+  </div>
+)}
+
 
 
         {/* Hero Content */}
