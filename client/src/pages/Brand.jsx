@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './Brand.css';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -87,6 +87,7 @@ const TechCarousel = () => {
 
 function Brand() {
   const location = useLocation();
+  const navigate=useNavigate()
 
   useEffect(() => {
     const hash = location.hash;

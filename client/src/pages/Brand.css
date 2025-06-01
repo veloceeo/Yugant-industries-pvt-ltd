@@ -723,31 +723,35 @@ body {
 
 @media screen and (max-width: 768px) {
   .navbar {
+    
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 5px;
+    
   }
 
   .logo img {
     margin-left: 20px;
     height: 35px;
     width: auto;
+    max-width:60px ;
   }
 
   .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 5px;
     margin-right: 20px;
+    flex-shrink: 0;
   }
 
   .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .hamburger {
-    display: block;
+    display: none;
   }
 
   .about-content {
@@ -1048,36 +1052,38 @@ body {
   }
 
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 80px; 
-    right: 0;
-    width: 150px;
-    background: #a35438;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 1000;
-    margin-right: 0;
-    border-radius: 5px;
-  } 
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 150px;
+  background: #a35438;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  margin-right: 0;
+  border-radius: 5px;
+}
 
-  .nav-links.show {
-    display: flex;
-  }
+.nav-links.show {
+  display: flex;
+}
 
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-  }
+.nav-links li {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
 
-  .nav-links li a {
-    display: block;
-    width: 100%;
-    font-size: 18px;
-  }
+.nav-links li a {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
 
   .carousel-container {
     width: 70%;
